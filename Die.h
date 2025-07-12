@@ -6,6 +6,8 @@ class Die {
 private:
   int faceValue;
   int sides;
-  bool isHeld;
+  bool isHeld; 
+
+
 
 
