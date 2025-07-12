@@ -8,6 +8,15 @@ private:
   int sides;
   bool isHeld; 
 
+public:
+  Die(int numSides = 6);
+  void roll();
+  int getFaceValue() const;
+  bool getIsHeld() const;
+  void toggleHold();
+  void resetHold();
+};
 
+#endif
 
 
