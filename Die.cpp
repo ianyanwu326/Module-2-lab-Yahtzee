@@ -12,3 +12,18 @@ void Die::roll() {
   }
 }
 
+int Die::getFaceValue() const {
+  return faceValue;
+}
+
+bool Die::getIsHeld() const {
+  return isHeld;
+}
+
+void Die::toggleHold() {
+  isHeld = !isHeld;
+}
+
+void Die::resetHold() {
+  isHeld = false;
+}
