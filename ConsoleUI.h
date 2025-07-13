@@ -10,4 +10,11 @@ public:
   void displayDice(const std::vector<int>& dice, const std::vector<bool>& heldStatus) const;
   void displayScoreOptions(const std::vector<std::string>& options, const std::vector<int>& scores) const;
 
-  
+  std::vector<bool> getDiceToHold(int diceCount) const;
+  int getScoreChoice(const std::vector<std::string>& options) const;
+  bool promptPlayAgain() const;
+  void displayMessage(const std::string& message) const;
+  void displayFinalScore(int score) const;
+};
+
+#endif
