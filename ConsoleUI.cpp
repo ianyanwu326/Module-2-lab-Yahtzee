@@ -34,3 +34,61 @@ void ConsoleUI::displayScoreOptions(const std::vector<std::string>& options, con
   std::cout << "\n";
 }
 
+std::vector<bool> ConsoleUI::getDiceToHold(int diceCount) const {
+  std::vector<bool> holds(diceCount, false);
+  std::string input;
+
+  std::cout << "Enter which dice to hold (1-5), separated by spaces (e.g., 1 3 5): ";
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+  std::getline(std::cin, input);
+
+  size_t pos = 0;
+  while (pos < input.length()) {
+    if (isdigit(input[pos])) {
+      int dieNum = input[pos] - '0';
+      if (dieNum >= 1 && dieNum <= diceCount) {
+        holds[dieNum - 1] = true;
+      }
+    }
+    pos++;
+  }
+
+  return holds;
+}
+
+int ConsoleUI::getScoreChoice(const std::vector<std::string>& options) const {
+  int choice;
+  while (true) {
+    std::cout << "Select a category to score (1-" << options.size() << "): ";
+    std::cin >> choice;
+
+    if (std::cin.fail()) {
+      std::cin.clear();
+      std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+      std::cout << "Invalid input. Please enter a number.\n";
+    }
+    else if (choice < 1 || choice > static_cast<int>(options.size())) {
+      std::cout << "Invalid choice. Please select a number between 1 and " << options.size() << ".\n";
+    }
+    else {
+      break;
+    }
+  }
+  return choice - 1; // Convert to 0-based index
+}
+
+bool ConsoleUI::promptPlayAgain() const {
+  char response;
+  std::cout << "Would you like to play again? (y/n): ";
+  std::cin >> response;
+  return (response == 'y' || response == 'Y');
+}
+
+void ConsoleUI::displayMessage(const std::string& message) const {
+  std::cout << message << "\n";
+}
+
+void ConsoleUI::displayFinalScore(int score) const {
+  std::cout << "\nGame Over!\n";
+  std::cout << "Your final score: " << score << "\n\n";
+}
