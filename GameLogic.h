@@ -15,3 +15,22 @@ private:
   int calculateScoreForCategory(int category) const;
   bool isCategoryUsed(int category) const;
 
+public:
+  GameLogic();
+
+  void startNewRound();
+  void rollDice(const std::vector<bool>& diceToHold);
+  bool canRollAgain() const;
+  bool isRoundOver() const;
+
+  std::vector<int> getCurrentDiceValues() const;
+  std::vector<bool> getCurrentDiceHoldStatus() const;
+
+  std::vector<std::string> getAvailableCategories() const;
+  bool recordScoreForCategory(int category);
+
+  int getTotalScore() const;
+  bool isGameOver() const;
+};
+
+#endif
