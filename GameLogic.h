@@ -1,19 +1,19 @@
 #ifndef GAME_LOGIC_H
 #define GAME_LOGIC_H
-
+#include "Die.h"
 #include <vector>
 #include <string>
 
 class GameLogic {
 private:
-  std::vector<Die> dice;
+  std::vector <Die> dice;
   int rollsRemaining;
   std::vector<int> scores;
   std::vector<bool> categoriesUsed;
 
   void rollAllUnheldDice();
-  int calculateScoreForCategory(int category) const;
-  bool isCategoryUsed(int category) const;
+  
+  
 
 public:
   GameLogic();
@@ -31,6 +31,11 @@ public:
 
   int getTotalScore() const;
   bool isGameOver() const;
+
+  bool isCategoryUsed(int category) const; 
+
+  int calculateScoreForCategory(int category) const;
+
 };
 
 #endif
