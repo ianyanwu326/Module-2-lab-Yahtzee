@@ -47,3 +47,4 @@ public:
   // ... more methods ...
 };
 
+Thank you and I hope you enjoy the Game Yahtzeee!!!!!!!
