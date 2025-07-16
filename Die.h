@@ -6,7 +6,7 @@ class Die {
 private:
   int faceValue;
   int sides;
-  bool isHeld; 
+  bool isHeld;
 
 public:
   Die(int numSides = 6);

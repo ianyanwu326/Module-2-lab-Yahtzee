@@ -1,4 +1,4 @@
-#include "GameLogic.h"
+ #include "GameLogic.h"
 #include "Die.h"
 #include <algorithm>
 

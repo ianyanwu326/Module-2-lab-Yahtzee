@@ -12,8 +12,8 @@ private:
   std::vector<bool> categoriesUsed;
 
   void rollAllUnheldDice();
-  
-  
+
+
 
 public:
   GameLogic();
@@ -32,10 +32,15 @@ public:
   int getTotalScore() const;
   bool isGameOver() const;
 
-  bool isCategoryUsed(int category) const; 
+  bool isCategoryUsed(int category) const;
 
   int calculateScoreForCategory(int category) const;
 
 };
 
 #endif
+
+
+
+
+

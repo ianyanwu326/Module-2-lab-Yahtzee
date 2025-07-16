@@ -92,3 +92,8 @@ void ConsoleUI::displayFinalScore(int score) const {
   std::cout << "\nGame Over!\n";
   std::cout << "Your final score: " << score << "\n\n";
 }
+
+
+
+
+
